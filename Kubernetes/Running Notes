@@ -1,5 +1,8 @@
 Kubernetes: container orchestration or container management system.In short we can call kubes or K8s.
 
+Book to read - https://github.com/PegasusWang/books-1/blob/master/dev-ops/kubernetes/kubernetes-up-running.pdf
+Tips to crack Kubernetes exam - https://medium.com/@pmvk/tips-to-crack-certified-kubernetes-administrator-cka-exam-c949c7a9bea1
+
 use cases: Basic things which we can achive using K8s.
 . with a single image we can spin up any number of pods in any number of nodes, so that all pods have
   same configuration with zero difference. 
