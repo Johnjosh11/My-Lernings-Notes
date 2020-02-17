@@ -1,0 +1,42 @@
+Commands which we are going to dicuss in while learning Git with relatime senarios (Please reffere senarios page)
+Note : (order might change)
+
+git config
+git init
+git clone
+git add
+git commit
+git diff
+-----------------------------------------------------------------------
+git reset (To bring back the files from staged area to unstaged area)
+exp: git reset HEAD <file name> [for perticula file]
+exp: git reset HEAD * [for all the files]
+
+exp: git reset --hard HEAD~1 [This removes the commits and places the files or changes to its original]
+exp: git reset --soft HEAD~1 [This removes the commits and places the files or changes in staging area]
+------------------------------------------------------------------------
+git revert (To make the changes to the file which are already push to remote or central)
+exp: git revert commitId
+------------------------------------------------------------------------
+git status
+git rm
+git log
+git show
+git tag
+git branch
+---------------------------------------------------------------------------
+git checkout (To discard the changes we made before adding to sataging area) 
+exp: git checkout <file name> [for perticular file]
+exp: git checkout . [for all the changes made in the current working area]
+---------------------------------------------------------------------------
+git merge
+git remote
+git push
+git pull
+git stash
+git rebase
+
+----------------------------------------------------------------------------
+git rev-list --all --count [To count the number of commits history]
+git log --oneline | wc -l 
+----------------------------------------------------------------------------

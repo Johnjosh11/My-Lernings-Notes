@@ -1,0 +1,34 @@
+What if you want to write something and collaborate with others. 
+Best solution is Git at present and worldwidely accepted one
+
+I want to write something and store. Ok (filezilla, ftp, drive, pendrive, etc..,)
+I want to know what i have changed and what time i have changed (git add, commit, push)
+
+I have added something in the staging but dont want to add in this staging (dont add it in the git staging) as simple as that. 
+I have already added but wanted to take out from staging. (git reset head and file name)
+I wanted that file to be empty and write from the begining (git checkout filename)
+what if i have staged the file and added in the commit area but wanted to bring out of this commit (git reset hard head filename)
+
+I wanted other people also to contribute to my code as this is opensource code but privately to selected members (git create branches and share it with other users)
+
+How to change branches (git checkout)
+
+[other peopole should clone your project to their local system to contribute. so they should use (git clone url)]
+
+I wanted to pull the latetest changes made in the central repo to my local repo (git pull)
+
+How do i change branch with out letting/effecting my current branch changes to other branch which am switching (git stash)
+Now i switch back to the original branch which i am merging and get back the previous modifications (git pop)
+
+I see that the developer has given good solution to my project an wanted to include that code in my master branch (git merge) or (git rebase)
+
+I wanted to integrate git with other tools and do some automations with the merge or push (git webhooks)
+
+I see that some part of the code looks pretty good and would like to make it available to the public or make it standered version and continuew developing (git tag)
+
+I wanted to see current status of all the contributers till now (git fetch)
+
+I wanted to check the logs (git log) or in a graphical mode (git log --graph)
+
+How to do password less authontication (use ssh)
+

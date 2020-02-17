@@ -1,0 +1,122 @@
+Kubernetes: container orchestration or container management system.In short we can call kubes or K8s.
+
+use cases: Basic things which we can achive using K8s.
+. with a single image we can spin up any number of pods in any number of nodes, so that all pods have
+  same configuration with zero difference. 
+. We can place an internal LB infornt of the pods, and also we can make it publically accessable with DNS. 
+. It can automatically spin up new containers if the load is too high like Auto Scalling.
+. Presised Access permissions 
+. Service catalog (which can access data from thrid party)
+
+
+Architecture: There are Master, Nodes, Pysical network and Overlay network
+Master components:
+>  API Server
+>  Scheduler
+>  Controller Manager
+>  etcd (main database)
+
+API Server 
+           - communicates with the node Kublet (Kublet resides in the node, which has full controll over the node machine)
+           - commands or drives actions/performance of Scheduler and Controller Manager. 
+
+
+
+Node components: 
+>  Kubelet
+>  Kube-proxy
+>  Container runtime
+>  Pods
+>  Operating System
+>  Infrastructure
+
+Kubelet 
+         - It communicates with the API Server and do/manages node occordingly. 
+    
+Kube-proxy
+         - It manages the pods network configurations like IP address, host-name etc.,
+
+Container runtime or container engine
+         - It is typically Docker which helps in creating a pod container.
+
+Operating System 
+         - It can be windows or Linux 
+    
+Infrastructure 
+         - Pysical resources of a node like, ram, disc, drivers, cpu etc., 
+
+Pods 
+         - Pod is a place where container runs and it can have any number of contianer.
+         - Ip-address is given to pod and not to the container
+
+------------------------------------------------------------------------------------------
+                               Installing:
+sudo apt-get install snapd 
+sudo snap install microk8s --classic
+microk8s.kubectl - check if this working or gives some kind of output  
+echo "alias kubectl='microk8s.kubectl'" >> ~/.bashrc -> This is a alias command 
+kubectl -> Now you should get same output as microk8s.kubectl. 
+-------------------------------------------------------------------------------------------
+                          Deploying or creating pod
+
+There are three layer in creating a pod
+Deployment - Configuration of the pod is stored.
+Replicasets - It controlls the Pod and depending on this, number of container in the pod can be scalled up.
+Pod - It holds the containers, it can be one or more. 
+
+                           Running our first pod:
+                        ----------------------------
+kubectl run pingpong --image alpine ping 1.1.1.1
+                        making three replicas of the same above pod
+                        --------------------------------------------
+kubectl run pingpong --image alpine pingpong 1.1.1.1 --replicas 3
+kubectl scale deploy/pingpong --replicas 3 
+                      Checking logs of the pod
+                      ------------------------
+kubectl logs deploy/pingpong
+kubectl logs deploy/pingpong --follow
+                     Checking logs of all the container in single time
+                     -------------------------------------------------
+kubectl logs -l run pingpong --tail 1 -f
+Note: we can follow only 5 pod logs at a same time, though we can increate the limit (--max-log-requests)
+                          To delete the pods or deployments
+                          ---------------------------------
+kubectl delete deployment/pingpong 
+
+                                 Exposing services
+                                 -----------------
+kubectl create deployment httpenv --image=bretfisher/httpenv
+kubectl scale deployment httpenv --replicas 3 
+kubectl get service
+kubectl expose deployment httpenv --port 8888
+kubectl get service 
+http://ip:8888
+curl ip:8888
+                                To connect to the pod
+                                ---------------------
+kubectl apply -f https://bret.run/shpod.yml
+kubectl attach --namespace=shpod -ti 
+exit - to exit from the connected pod
+
+                                Endpoints
+                                ---------
+kubectl get endpoints 
+kubectl get endpoints httpenv -o yaml
+kubectl get pods -l app=httpenv -o wide
+
+                            Walking through App Deployment:
+                            -------------------------------
+kubectl create deployment redis --image=redis
+kubectl create deployment hasher --image=dockercoins/hasher:v0.1
+kubectl create deployment rng --image=dockercoins/rng:v0.1
+kubectl create deployment webui --image=dockercoins/webui:v0.1
+kubectl create deployment worker --image=dockercoins/worker:v0.1
+
+
+kubectl logs deploy/rng
+
+
+
+
+                    
+

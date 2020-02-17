@@ -1,0 +1,95 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftWebConsole
+  creationTimestamp: '2020-01-15T14:10:25Z'
+  generation: 3
+  labels:
+    app: gsm-billing-changes
+  name: gsm-billing-changes
+  namespace: johnb-test
+  resourceVersion: '494571093'
+  selfLink: >-
+    /apis/apps.openshift.io/v1/namespaces/johnb-test/deploymentconfigs/gsm-billing-changes
+  uid: c6adf455-37a0-11ea-8532-fa163ec5cb14
+spec:
+  replicas: 1
+  selector:
+    app: gsm-billing-changes
+    deploymentconfig: gsm-billing-changes
+  strategy:
+    activeDeadlineSeconds: 21600
+    resources: {}
+    rollingParams:
+      intervalSeconds: 1
+      maxSurge: 25%
+      maxUnavailable: 25%
+      timeoutSeconds: 600
+      updatePeriodSeconds: 1
+    type: Rolling
+  template:
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: null
+      labels:
+        app: gsm-billing-changes
+        deploymentconfig: gsm-billing-changes
+    spec:
+      containers:
+        - image: >-
+            ahtaaja.saunalahti.fi/jpd/devel/public/gsm-billing-changes/lltdeploy@sha256:63eddab8ec2bd5338797fd10263dfdd92177a9ffe65e588dcf8706f487f8b33b
+          imagePullPolicy: Always
+          name: gsm-billing-changes
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  test: false
+  triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+          - gsm-billing-changes
+        from:
+          kind: ImageStreamTag
+          name: 'gsm-billing-changes:latest'
+          namespace: johnb-test
+        lastTriggeredImage: >-
+          ahtaaja.saunalahti.fi/jpd/devel/public/gsm-billing-changes/lltdeploy@sha256:63eddab8ec2bd5338797fd10263dfdd92177a9ffe65e588dcf8706f487f8b33b
+      type: ImageChange
+status:
+  availableReplicas: 1
+  conditions:
+    - lastTransitionTime: '2020-01-15T14:18:05Z'
+      lastUpdateTime: '2020-01-15T14:18:08Z'
+      message: replication controller "gsm-billing-changes-2" successfully rolled out
+      reason: NewReplicationControllerAvailable
+      status: 'True'
+      type: Progressing
+    - lastTransitionTime: '2020-01-22T16:57:07Z'
+      lastUpdateTime: '2020-01-22T16:57:07Z'
+      message: Deployment config has minimum availability.
+      status: 'True'
+      type: Available
+  details:
+    causes:
+      - imageTrigger:
+          from:
+            kind: DockerImage
+            name: >-
+              ahtaaja.saunalahti.fi/jpd/devel/public/gsm-billing-changes/lltdeploy@sha256:63eddab8ec2bd5338797fd10263dfdd92177a9ffe65e588dcf8706f487f8b33b
+        type: ImageChange
+    message: image change
+  latestVersion: 2
+  observedGeneration: 3
+  readyReplicas: 1
+  replicas: 1
+  unavailableReplicas: 0
+  updatedReplicas: 1

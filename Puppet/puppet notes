@@ -1,0 +1,131 @@
+To print all the configs of puppet
+===================================
+puppet config print all
+
+
+
+=======================================
+#NTP Package installation
+
+package { "ntp":
+  ensure => "present",
+}
+
+# NTP file configureation
+file { "/etc/ntp.conf":
+ ensure => "present",
+ content => "server 0.centos.pool.ntp.org iburst\n",
+}
+
+# NTP Service startup
+service {"ntpd":
+ ensure => "running",
+}
+
+
+To know about any resource
+=======================================
+puppet resource --type | grep -i user
+puppet describe user
+
+To validate the syntax check
+===================================
+puppet parser validate manifestfile
+
+Puppet clasess are single unit of multiple resource
+=================================================
+class ntpconfig {
+file { "/etc/ntp.conf":
+ ensure => "present",
+ content => "server 0.centos.pool.ntp.org iburst\n",
+}
+
+}
+
+include ntpconfig
+
+}
+
+
+node declaration
+============================================
+node 'node/agent name' {
+include ntpconfig
+}
+
+
+node 'node/agent name', 'node/agent' {
+include ntpconfig
+}
+
+module
+=============
+puppet module generate nginx
+write your configuration in the init.pp file
+and include that in the main manifest folder with the include module name 
+
+
+Java and Tomcat Module
+======================
+class java::install
+ package { "epel-release", "java-1.7.0-openjdk"]: }
+}
+
+
+in main maifest
+ 
+node 'node1' {
+include java::install
+}
+
+To define no specs for other nodes use notify resource
+======================================
+node 'node1' {
+notify{"**** NODE1 BLOCK ****"}
+include java::install
+}
+
+node 'default' {
+ notify{"checkpoint_1":
+  message => "**** DEFAULT BLOCK ****"
+}
+}
+
+-----------------
+class tomcat::install {
+package {["tomcat", "tomcat-webapps"]}
+ensure => installed,
+}
+}
+
+class tomcat::service{
+service{ "tomcat":
+ensure => running,
+enable => true,
+}
+} 
+
+
+--------
+node 'node1' {
+notify{"**** NODE1 BLOCK ****"}
+include java::install
+include tomcat::install
+include tomcat::service
+}
+
+node 'default' {
+ notify{"checkpoint_1":
+  message => "**** DEFAULT BLOCK ****"
+}
+}
+
+---> we can add init.pp and include all of them at one place and just call with the module name
+
+copy file 
+-----------------------
+file {'/etc/tomcat/tomcat.conf':
+source => 'puppet:///modulestomcat/tomcat.conf',
+}
+}
+

@@ -1,0 +1,60 @@
+cloud guru
+linux academy
+Re:Invent 2018 (securing your virtual data center in the cloud talk, Become an IAM Policy Master in 60 Minutes)
+Tutorials Dojo Cheatsheets
+Buy udemy exam papers
+----------------------------------------------------------------------------------------------------------------------------------
+What is Availability? - It araise a point of SLA
+
+. Reliability: Reliable hardware
+. Recoverability: Because there may be many choices for recovering from a failure
+. Timely error detection: If a component in your architecture fails, then fast detection is essential to recover from the        unexpected failure. 
+. Continuous operation: Providing the ability for continuous access to your data is essential when very little or no downtime is acceptable to perform maintenance activities
+
+->ITIL 
+
+●  Service Strategy
+●  Service Design
+●  Service Transition
+●  Service Operation
+●  Continual Service Improvement.
+
+
+->PATCHING
+
+debian:
+sudo apt-get update       # Fetches the list of available updates
+sudo apt-get upgrade       # Strictly upgrades the current packages
+sudo apt-get dist-upgrade     # Installs updates (new ones)
+
+Redhat: 
+yum check-update           # To check for the list of available updates
+yum update                      # Installs updates for all the packages
+
+ /etc/yun.repos.d/example.repo
+[base]
+name=CentOS-$releasever - Base
+mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os
+#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+Difference between RPM and YUM
+1. RPM is a package manager while YUM is a frontend that can be used with RPM.
+2. The RPM package manager is unable to track dependencies while YUM can.
+
+repoquery --list package_name
+yumdb info yum
+ 
+Yum list kernal|package|available|installed
+yum deplist nfs-utils
+
+-> Update kernal
+	yum update kernel
+        yum install kernel-{version}
+	
+-> UserSpace & KernalSpace
+
+https://developer.ibm.com/articles/l-linux-kernel/
+
+

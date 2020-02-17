@@ -1,0 +1,48 @@
+1) word-showhide - used for expand and colaps 
+   Refference - (https://www.wpbeginner.com/plugins/how-to-show-and-hide-text-in-wordpress-posts-with-the-toggle-effect)
+   plugin     - https://wordpress.org/plugins/wp-showhide/
+
+2) mailchimp
+
+3) WP Optin Wheel
+
+4) WP-Live Chat by 3CX
+
+5) simple ssl
+
+6) Updraft plus wordpress backup plugin
+
+7) yoast SEO
+
+8) Wp mail smtp by wpforms	
+
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+php_value upload_max_filesize 256M
+</IfModule>
+
+https://docs.google.com/forms/d/e/1FAIpQLSdlLAD8sLa1Nhp3-Mz_AgFmswxx-PoMYdn21KExNvOpT7AG5Q/viewform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

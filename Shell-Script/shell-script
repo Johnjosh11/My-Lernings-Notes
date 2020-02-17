@@ -1,0 +1,7 @@
+find . -name \*.* | xargs fgrep -r "zookeeper" -l ---------> to find a specific word in folder
+
+
+
+
+
+

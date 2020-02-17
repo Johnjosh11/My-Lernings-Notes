@@ -1,0 +1,21 @@
+1) Git is a version control system. 
+2) Clone:To completely cone central repo to local system
+   add  :To make the current local repo as the git initial path. 
+3) To make sure what/why changes are made in perticular commits
+4) Git Merge. Merging is Git's way of putting a forked history back together again. 
+   The git merge command lets you take the independent lines of development created by git branch and integrate them into a single branch. 
+   Note that all of the commands presented below merge into the current branch.
+
+    In Git, the rebase command integrates changes from one branch into another. 
+    It is an alternative to the better known "merge" command. Most visibly, 
+    rebase differs from merge by rewriting the commit history in order to produce a straight, 
+    linear succession of commits.
+5) git fetch really only downloads new data from a remote repository 
+  but it doesn't integrate any of this new data into your working files. 
+  Fetch is great for getting a fresh view on all the things that happened in a remote repository.
+
+  git pull, in contrast, is used with a different goal in mind: to update your current HEAD branch with the latest changes from the remote server. 
+  This means that pull not only downloads new data; 
+  it also directly integrates it into your current working copy files. This has a couple of consequences
+8) git checkout filename (Please explaing in brief)
+10) add the fies in .gitognore file which will not upload it to central repo

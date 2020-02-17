@@ -1,0 +1,13 @@
+mysql -u root -prootpassword 				  			- Login to database
+mysql -u testuser -ptestpassword
+show databases; 					  			- To see all the databases present 
+GRANT ALL PRIVILEGES ON choppo TO 'testuser'@'localhost'; 			- To give permissions for a user on database
+SELECT User FROM mysql.user;							- To see all the user present
+select user from mysql.db where db='DB_NAME';					- To see see which user has privillages on database
+SHOW GRANTS FOR 'testuser';							- To see user having which database permissions
+
+
+
+
+
+

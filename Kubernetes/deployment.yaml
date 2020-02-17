@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftWebConsole
+  labels:
+    app: gsm-billing-changes-test
+  name: gsm-billing-changes-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gsm-billing-changes-test
+  template:
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: null
+      labels:
+        app: gsm-billing-changes-test
+        deploymentconfig: gsm-billing-changes-test
+    spec:
+      containers:
+        - image: >-
+            ahtaaja.saunalahti.fi/jpd/devel/public/gsm-billing-changes/lltdeploy:latest
+          imagePullPolicy: Always
+          name: gsm-billing-changes-test
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

@@ -1,0 +1,11 @@
+1Q) What is git
+2Q) When do we use git clone and git add remote url
+3Q) Why do we use git commits
+4Q) What is the difference between the merge and rebase
+5Q) What is the difference between fetch and pull 
+6Q) How do you take out a file from the staging area
+7Q) How to you take out a file from commit area 
+8Q) What is the Git command to blow away all the changes since last commit 
+9Q) What is git merge conflict and how do you correct it. 
+10Q)How do you ignore files from uloading to the central repo. 
+    and what is the purpose of .gitignore file

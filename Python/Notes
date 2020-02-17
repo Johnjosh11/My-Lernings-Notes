@@ -1,0 +1,388 @@
+String Slicing -> [start:Stop:step]
+  start -> Begining
+  stop  -> End till here but not include this
+  step  -> Increment by two strps
+
+Immutability  = meaning(If you can't change it) we can not change the item value of the string
+String attributes = variable.lower() and there are many attributes to it
+Print Formating with String = there are two types of formating 
+  1) .format 
+     exp = print('The {a} {b} {c}'.format(a='sky',b='is',c='blue'))
+     by default if you dont specify the key's it takes numerical value starting with 0
+  2) foloat formating 
+     exp
+           name = josh
+           print (f'Hello, his name is {name}')
+           This will be convinient because we can directly call the variable in the string
+Lists  = Lists are mutable
+    The indexing values are same as a string
+    Lists can hold string, intiger, floating vaues in it's item. 
+
+    exp = my_list = ['one','2','3.4']
+             indexing = 0   1    2
+    
+Dictionaries = These are un ordered mapping for storing objects.
+
+              My_list = {'key1':'one','key2':2,'key3':3.4,'key5':[1,2,3],'key6':{'key7':200}}
+              So the dictionaries can hold its items as keys, lists, and dictioaries as well
+Touple = these are immutable
+       t = (1,2,3)
+Sets = Sets are collections of unique elements (not touced much)
+Booleans = These are opoerators that allow you to convey Ture or False statements. These are used in control flow and logics.
+
+
+Python Statements:
+
+if, elfi, else
+--------------
+exp:
+
+loc = 'Bank'
+if loc == 'Bank':
+    print("CARS are cool!")
+elif loc == 'Auto shop':
+    print("Money is cool!")
+elif    loc == 'store':
+    print("Wlcome to the store!")
+else:
+    print("I do not know much.")
+
+
+for loop
+--------
+exp:(lists)
+mylist = [1,2,3] 
+for application in mylist:
+    print (application)
+
+for num in mylist:
+    # Chck for even number
+    if num % 2 == 0:
+        print(num)
+    else:
+        print(f'Its Odd Number {num}')
+
+list_sum = 0
+for num in mylist:
+    list_sum = list_sum + num
+print(list_sum)
+
+list_sum = 0
+for num in mylist:
+    list_sum = list_sum + num
+    print(list_sum)
+
+exp:(string)
+mystring = 'Hello World' 
+for letter in mystring:
+    print(letter)
+
+for item in 'Hello world':
+    print(item)
+
+for _ in 'Hello world':
+    print('item')
+
+exp:(tuple)
+
+tup = (1,2,3)
+for item in tup:
+    print(item)
+
+parrot = [(1,2),(3,4),(5,6)]
+for item in parrot:
+    print(item)
+
+Now we see tupple unpacking
+parrot = [(1,2),(3,4),(5,6)]
+for (d,f) in parrot:
+    print(d)
+    print(f)
+
+Usefull casses with dictionaries
+dec = {'K1':1,'K2':2,'K3':3}
+for item in dec:
+    print(item)
+
+dec = {'K1':1,'K2':2,'K3':3}
+for b in dec.items():
+    print(b) 
+
+dec = {'K1':1,'K2':2,'K3':3}
+for a,b in dec.item:
+    print(b)
+
+While Loop:
+-----------
+x = 0
+while x < 5:
+    print(f'This is the current x value {x}')
+    x += 1
+
+x = 0
+while x < 5:
+    print(f'This is the current x value {x}')
+    x += 1
+else:
+    print('x is not not less than 5')
+
+x = 50
+while x < 5:
+    print(f'This is the current x value {x}')
+    x += 1
+else:
+    print('x is not not less than 5')
+
+pass, continue, break
+---------------------
+pass = does nothing at all
+
+x = [1,2,3]
+for item in x:
+    # comment
+    pass
+print('end of my script')
+
+continue = Goes to the top of the closest enclosing loop
+mystring = 'Sammy'
+for letter in mystring:
+    if letter == 'm':
+        continue
+    print(letter)
+
+break = Breaks out of the current closest enclosing loop.
+mystring = 'Sammy'
+for letter in mystring:
+    if letter == 'm':
+        break
+    print(letter)
+
+operators:
+----------
+
+range operator
+exp:
+for num in range(0,11,2)
+    print(num)
+exp:
+list(range(0,11,2))
+0 -> starting from
+11 -> till here but dont include 11
+2 -> jump 2 step size
+
+example: enumerate
+
+index_count = 0
+man = 'abcde'
+
+for letter in man:
+    print('At index {} the letter is {}'.format(index_count,letter))
+    index_count = index_count + 1
+
+                    or 
+
+index_count = 0
+
+for letter in 'abcde':
+    print('At index {} the letter is {}'.format(index_count,letter))
+    index_count += 1
+
+                    to make it work simple(which returns the values in tuples, later we can decouple the tuples)
+
+word = 'abcde'
+for item in enumerate(word):
+    print(item)
+
+example: zip
+	
+list1 = [1,2,3]
+list2 = ['a','b','c']
+zip(list1,list2)
+
+for item in zip(list1,list2):
+    print(item)
+
+example:min & max
+mylist = [1,2,3,4,5]
+min(mylist)
+max(mylist)
+
+example: Import library called random and built in function called shuffle in random
+
+mylist = [1,2,3,4,5]
+shuffle(mylist)
+mylist
+
+example: user input function 
+
+input('Enter a number here:')
+
+example: append
+
+mystring = 'Hello'
+mylist = []
+for letter in mystring:
+    mylist.append(letter)
+
+         to make it even more simple we can use below example
+
+mylist = [letter for letter in 'word']
+mylist = [letter**2 for letter in range(1,11)]
+
+Functions:
+----------
+def say_hello():
+    print(hello)
+
+def say_hello(name= 'Aspiriant'):
+    print('hello   ' + name)      
+
+                        If we use print, we can not assign it to any other.
+                        To get the assgin ability then we need to use return. 
+
+def say_hello(name= 'Aspiriant'):
+    return('hello   ' + name) 
+
+def dog_check(mystring):
+    if 'dog' in mystring.lower():  comment*('dog' in mystring.lower():  is a boolian)
+        return True
+    else:
+        return False
+    
+                instead we can write it as below
+
+def dog_check(mystring):
+    return 'dog' in mystring.lower()
+
+
+def lattin_word(word):
+    first_letter = word[0]
+    if first_letter in 'aeiou':
+        piggy_name = word + 'ay'
+    else:
+        piggy_name = word[1:] + first_letter + 'ay'
+        
+    return piggy_name
+
+
+def is_even(num):
+    if num%2 == 0:
+       return True
+    else:
+       return False
+
+def is_even(a,b):
+    if a > b:
+        return True
+    else:
+        return False
+
+def myfunc(mystring):
+    if 'dog' in mystring.lower():
+        return 'Hello'
+    else:
+        return 'Goodbye'
+
+star args Or *ARGS (these are used when you want no limit to the set of values/items)
+------------------
+def func(*args):
+    return sum((args)) * 0.05
+
+
+
+
+
+
+
+
+def myfunc(*args):
+    letter = [0]
+    for  alpha in letter range(len(args)):
+       if letter%2 == 0:
+            letter.append(args[alpha].upper())
+        else:
+            letter.append(args[alpha].lower())
+        
+     return ''.join(letter)
+
+
+def has_33(nums):
+    for i in range(0,len(nums)-1):
+        if nums[i,i+2] == [3,3]
+           return True
+    return False 
+
+
+def paper_doll(text):
+    repeat = ''
+    while test in repeat:
+        final_word = repeat * 3
+        repeat + 1
+        return final_word
+
+def paper_doll(text):
+    repeat = ''
+    for char in text:
+        result 
+
+
+def master_yoda(text):
+    sen = text.split()
+    return ' '.join(reversed(se
+
+
+https://www.youtube.com/watch?v=_uQrJ0TkZlc (stopped at 1:27 (while condtion))
+https://devopscube.com/access-run-jenkins-port-80/ - proxy nginx
+https://www.cyberciti.biz/faq/how-to-install-and-use-nginx-on-centos-7-rhel-7/   - install jenkins in rhel 7 mapio
+
+62.142.40.133
+62.142.40.185
+
+===================================================camelot
+<VirtualHost 62.142.40.185:80>
+ ServerName camelot.saunalahti.fi
+# Use separate log files for the SSL virtual host; note that LogLevel
+# is not inherited from httpd.conf.
+#ErrorLog logs/ssl_error_log
+#TransferLog logs/ssl_access_log
+#LogLevel war
+
+ProxyRequests           Off
+ProxyPreserveHost       On
+
+ProxyPass               /       http://localhost:8181/
+ProxyPassReverse        /       http://localhost:8181/
+ProxyPassReverse        /       http://camelot.saunalahti.fi/
+
+#Redirect 301 / https://testjenkins.saunalahti.fi/
+</VirtualHost>
+
+==============================================test-je
+<VirtualHost 62.142.40.185:80>
+             ServerName testjenkins.saunalahti.fi
+# Use separate log files for the SSL virtual host; note that LogLevel
+# is not inherited from httpd.conf.
+#ErrorLog logs/ssl_error_log
+#TransferLog logs/ssl_access_log
+#LogLevel war
+
+ProxyRequests           Off
+ProxyPreserveHost       On
+
+ProxyPass               /       http://localhost:8080/
+ProxyPassReverse        /       http://localhost:8080/
+ProxyPassReverse        /       http://testjenkins.saunalahti.fi/
+
+#Redirect 301 / https://testjenkins.saunalahti.fi/
+</VirtualHost>
+
+
+
+
+happy easy go
+
+
+
+
+
+
