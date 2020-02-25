@@ -1,0 +1,9 @@
+kubectl run --image=nginx  nginx 
+kubectl describe pods  newpods-rdkv4
+kubectl get all
+kubectl describe pods webapp
+kubectl describe pods webapp -o yaml
+kubectl get namespaces
+kubectl get  pods webapp -o wide
+kubectl apply -f redis or use kubectl edit pod redis 
+kubectl delete pod redis

@@ -1,0 +1,40 @@
+#dirrence between Replicationset and ReplicationController is ReplicationSet have Selector sections.
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: myapp-rc 
+  labels:
+    app: myapp
+    type: Front-end
+spec:
+  template: 
+    
+    metadata: 
+      name: myapp-pod
+      labels: 
+        app: myapp-pod
+        type: Back-end
+    spec:
+      containers: 
+      -  name: nginx-container
+         image: nginx
+  replicas: 2
+  selector: 
+    matchLabels:
+      type: Back-end
+
+#Commands
+#kubectl create -f create-replicaset.yaml
+#kubectl get replicaset
+#kubectl delete -f create-replicaset.yaml or 
+
+                                          #To Scale the replicaset#
+# Change the replicas value in the file and run below command
+    # kubectl replace -f create-replicaset.yaml
+# Directly update on the file with out changing the yaml file
+    #   kubectl scale --replicas=6 -f create-replicaset.yaml    
+    #   kubectl scale --replicas=6 replicaset myapp-rc  
+          #Note: - But these two above options wont update the yaml file                                        
+
+#Questions:
+# How to delete replication controller with the name
