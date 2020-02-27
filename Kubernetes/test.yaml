@@ -1,16 +1,16 @@
-apiVersion: apps/v1
-kind: Deployment 
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
 metadata:
   annotations:
     openshift.io/generated-by: OpenShiftWebConsole
   labels:
-    app: gsm-billing-changes-test
-  name: gsm-billing-changes-test
+    app: mappo-test
+  name: mappo-test
 spec:
   replicas: 1
   selector:
-    app: gsm-billing-changes-test
-    deploymentconfig: gsm-billing-changes-test
+    app: mappo-test
+    deploymentconfig: mappo-test
   strategy:
     type: Rolling
     rollingParams:
@@ -22,18 +22,15 @@ spec:
     resources: {}
   template:
     metadata:
-      annotations:
-        openshift.io/generated-by: OpenShiftWebConsole
-      creationTimestamp: null
       labels:
-        app: gsm-billing-changes-test
-        deploymentconfig: gsm-billing-changes-test
+        app: mappo-test
+        deploymentconfig: mappo-test
     spec:
       containers:
         - image: >-
-            ahtaaja.saunalahti.fi/jpd/devel/public/gsm-billing-changes/lltdeploy:latest
+            ahtaaja.saunalahti.fi/jpd/devel/public/mappo/lltdeploy
           imagePullPolicy: Always
-          name: gsm-billing-changes-test
+          name: mappo-test
           resources: {}
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
@@ -48,8 +45,8 @@ spec:
     - imageChangeParams:
         automatic: true
         containerNames:
-          - gsm-billing-changes-test
+          - mappo-test
         from:
           kind: ImageStreamTag
-          name: 'gsm-billing-changes:latest'
+          name: 'mappo:latest'
       type: ImageChange

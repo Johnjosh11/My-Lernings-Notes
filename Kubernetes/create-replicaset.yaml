@@ -26,7 +26,7 @@ spec:
 #Commands
 #kubectl create -f create-replicaset.yaml
 #kubectl get replicaset
-#kubectl delete -f create-replicaset.yaml or 
+#kubectl delete -f create-replicaset.yaml or kubectl delete replicaset myapp-rc
 
                                           #To Scale the replicaset#
 # Change the replicas value in the file and run below command
@@ -35,6 +35,3 @@ spec:
     #   kubectl scale --replicas=6 -f create-replicaset.yaml    
     #   kubectl scale --replicas=6 replicaset myapp-rc  
           #Note: - But these two above options wont update the yaml file                                        
-
-#Questions:
-# How to delete replication controller with the name
