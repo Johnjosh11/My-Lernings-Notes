@@ -1,0 +1,25 @@
+-1 Amazon EC2 was launched in the year - 2006
+-2 Which of the following purchasing options cannot be canceled once purchased - (-reserved, sopt, dedicated, on-demand)
+-3 Which of the following purchasing options are not available in all the regions? - (reserved, sopt, -dedicated, on-demand)
+-4 The number of free AMIs available is different from region to region - -true,false
+-5 The hardware of the host computer where your instance is launched is decided by - (-instance type, AMI, region)
+-6 EC2 is compliant with the security standards of PCI DSS - (-true, False)
+-7 Which instance family provides us with computer-optimized instances - c
+-8 The extension of the downloaded private key is - .pem
+-9 AZ are isolated datacenters in one region or all are in one datacenter - isolated
+-10 IAM Users are defined on a per-region basis - (True or -false)
+-11 An IAM user can belong to multiple groups - (-True or false)
+-12 You are getting a network timeout when trying to SSH into your EC2 instance - what would be the issue. 
+-13 You would like to make sure your EC2 instances have the highest performance while talking to each other as you're performing big data analysis. 
+    Which placement group should you choose? (- Clustor, spread)
+    A) Cluster placement groups places your instances next to each other giving you high performance computing and networking
+-14 You plan on running an open-source MongoDB database year-round on EC2. Which instance launch mode should you choose? (On-demand, -reserved, Spot instance)
+    A) This will allow you to save cost as you know in advance that the instance will be a up for a full year
+-15 You built and published an AMI in the ap-southeast-2 region, and your colleague in us-east-1 region cannot see it - images created in a region can only be seen in that region.
+-16 It works well, so you decide to deploy your script in us-west-1 as well. There, the script does not work and fails with "ami not found" error. What's the problem? - (Ami is region locked and the same id can not be used accross regions)
+-17 You would like to deploy a database technology and the vendor license bills you based on the physical cores and underlying network socket visibility. Which EC2 launch modes allows you to get visibility into them? 
+    (spot, on-demand, -dedicated host, didicated instance)
+-18 You are launching an application on EC2 and the whole process of installing the application takes about 30 minutes. You would like to minimize the total time for your instance to boot up and be operational to serve traffic. What do you recommend?
+    (install the app with user data, -create an AMI and launch using that AMI, Use EC2 clustor placement group)
+-19 You are running a critical workload of three hours per week, on Monday. As a solutions architect, which EC2 Instance Launch Type should you choose to maximize the cost savings while ensuring the application stability?
+    (On-demand, reserved, -scheduled reserved instance, spot)
