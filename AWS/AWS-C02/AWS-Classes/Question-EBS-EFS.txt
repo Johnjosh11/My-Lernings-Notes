@@ -1,0 +1,18 @@
+1) Your instance in us-east-1a just got terminated, and the attached EBS volume is now available. Your colleague tells you he can't seem to attach it to your instance in us-east-1b.
+   (Missing IAM permissions)
+   (EBS is region locked)
+   (EBS is AZ locked)
+2) You have provisioned an 8TB gp2 EBS volume and you are running out of IOPS. What is NOT a way to increase performance?
+   (Mount EBS volume in RAID 0)
+   (Change to i01 volume type)
+   (Increase the volume size)
+3) You would like to leverage EBS volumes in parallel to linearly increase performance, while accepting greater failure risks. Which RAID mode helps you in achieving that?
+   (RAID 0, 1, 5, 6)
+4) Although EBS is already a replicated solution, your company SysOps advised you to use a RAID mode that will mirror data and will allow your instance to not be affected if an EBS volume entirely fails. Which RAID mode did he recommend to you?
+   (RAID 0,1)
+5) You would like to have the same data being accessible as an NFS drive cross AZ on all your EC2 instances. What do you recommend?
+   (EBS, EFS, Instance store)
+6) You would like to have a high performance cache for your application that mustn't be shared. You don't mind losing the cache upon termination of your instance. Which storage mechanism do you recommend as a Solution Architect?
+   (EBS, EFS, Instance store)
+7)  You are running a high-performance database that requires an IOPS of 210,000 for its underlying filesystem. What do you recommend?
+   (EbS gp2, EBS io1, EFS, Instance store)

@@ -1,0 +1,7 @@
+1) EBS is AZ locked -  EBS Volumes are created for a specific AZ. It is possible to migrate them between different AZ through backup and restore
+2) Increase the volume size - EBS IOPS peaks at 16,000 IOPS. or equivalent 5334 GB.
+3) RAID 0 - See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/raid-config.html
+4) RAID 1 - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/raid-config.html
+5) EFS - EFS is a network file system (NFS) and allows to mount the same file system on EC2 instances that are in different AZ
+6) Instance store - Instance Store provide the best disk performance
+7) Instance store - Is running a DB on EC2 instance store possible? It is possible to run a database on EC2. It is also possible use instance store, but there are some considerations to have. The data will be lost if the instance is stopped, but it can be restarted without problems. One can also setup a replication mechanism on another EC2 instance with instance store to have a standby copy. One can also have back-up mechanisms. It's all up to how you want to setup your architecture to validate your requirements. In this case, it's around IOPS, and we build an architecture of replication and backup around it.
