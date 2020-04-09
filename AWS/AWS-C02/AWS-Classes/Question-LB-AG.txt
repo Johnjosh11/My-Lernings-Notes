@@ -1,0 +1,45 @@
+1) Load Balancers provide a - (Static-IP, Static-DNS, IPv6-aadress)
+2) You are running a website with a load balancer and 10 EC2 instances. Your users are complaining about the fact that your website always asks them to re-authenticate when they switch pages. You are puzzled, because it's working just fine on your machine and in the dev environment with 1 server. What could be the reason?
+   (Stickiness not enabled, application must have bugs, Issue with the LB settings)
+3) You quickly created an ELB and it turns out your users are complaining about the fact that sometimes, the servers just don't work. You realise that indeed, your servers do crash from time to time. How to protect your users from seeing these crashes?
+   (Enable stickiness, Enable-healthchecks, Enalbe-ssl)
+4) You are designing a high performance application that will require millions of connections to be handled, as well as low latency. The best Load Balancer for this is
+   (Application, Classic, Network)
+5) Application Load Balancers handle all these protocols except
+   (https, http, tcp)
+6) The application load balancer can route to different target groups based on all these except
+   (Hostname, request-path, Geography, source-Ip)
+7) You are running at desired capacity of 3 and the maximum capacity of 3. You have alarms set at 60% CPU to scale out your application. Your application is now running at 80% capacity. What will happen?
+   (Nothing, 4th server will launch to support the load, desired capasity and max value will change to 4 as it supports High availability)
+8) I have an ASG and an ALB, and I setup my ASG to get health status of instances thanks to my ALB. One instance has just been reported unhealthy. What will happen?
+   (ASG will keeps the instance running and restarts the application)
+   (ASG will detach the instance from the group and keeps it running)
+   (ASG will terminates the instance and created new instance)
+9) Your boss wants to scale your ASG based on the number of requests per minute your application makes to your database
+   (Its not possible)
+   (Enable cloud watch custom metrics and build an alarm to scal occordingly)
+   (Enable detaitailed monitoring and scale occordingly)
+10) Scaling an instance from an r4.large to an r4.4xlarge is called
+    (Horizontal scalling, Vertical Scalling)
+11) You would like to expose a fixed static IP to your end users for compliance purposes, so they can write firewall rules that will be stable and approved by regulators. Which Load Balancer should you use?
+    (Application, Classic, Network)
+12) A web application hosted in EC2 is managed by an ASG. You are exposing this application through an Application Load Balancer. The ALB is deployed on the VPC with the following CIDR: 192.168.0.0/18. How do you configure the EC2 instance security group to ensure only the ALB can access the port 80?
+    (Open Ec2 SG on port 80 to  0.0.0.0/0, Open port 80 to LB SG, Open port 80 to vpc SG, Attached ssl)
+13) Your application load balancer is hosting 3 target groups with hostnames being users.example.com, api.external.example.com and checkout.example.com. You would like to expose HTTPS traffic for each of these hostnames. How do you configure your ALB SSL certificates to make this work?
+    (Use SNI, Use wildcard ssl, Use http to https redirection)
+14) An ASG spawns across 2 availability zones. AZ-A has 3 EC2 instances and AZ-B has 4 EC2 instances. The ASG is about to go into a scale-in event. What will happen?
+    (AZ will deleted the instance randomly)
+    (AZ-A will terminate the instance with oldest launch configuration)
+    (AZ-B will terminate the instance with oldest launch configuration)
+    (AZ-A will create the instance new Ec2 instance)
+15) The Application Load Balancers target groups can be all of these EXCEPT...
+    (Ec2-Instance, IP Address, Lambda function, internet gateway)
+16) You are running an application in 3 AZ, with an Auto Scaling Group and a Classic Load Balancer. It seems that the traffic is not evenly distributed amongst all the backend EC2 instances, with some AZ being overloaded. Which feature should help distribute the traffic across all the available EC2 instances?
+    (Stikiness, cross zone load balancing, Traget group routing rules, https termination)
+17) An application is deployed with an Application Load Balancer and an Auto Scaling Group. Currently, the scaling of the Auto Scaling Group is done manually and you would like to define a scaling policy that will ensure the average number of connections to your EC2 instances is averaging at around 1000. Which scaling policy should you use?
+    (simple scaling policy)
+    (step scaling policy)
+    (Target scaling policy)
+    (Scheduling Scaling policy)
+
+

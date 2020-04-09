@@ -1,0 +1,17 @@
+1) Static-DNS -  The reason being that AWS wants your load balancer to be accessible using a static endpoint, even if the underlying infrastructure that AWS manages changes
+2) Stickiness not enabled - Stickiness ensures traffic is sent to the same backend instance for a client. This helps maintaining session data
+3) Enable-healthchecks - Health checks ensure your ELB won't send traffic to unhealthy (crashed) instances
+4) Network - NLB provide the highest performance if your application needs it
+5) tcp - Better handled with NLB
+6) Geography
+7) Nothing - The capacity of your ASG cannot go over the maximum capacity you have allocated during scale out events
+8) ASG will terminates the instance - Because the ASG has been configured to leverage the ALB health checks, unhealthy instances will be terminated
+9) Enable cloud watch custom metrics and build an alarm to scal occordingly - The metric "requests per minute" is not an AWS metric, hence it needs to be a custom metric
+10) Vertical Scalling
+11) Network - Network Load Balancers expose a public static IP, whereas an Application or Classic Load Balancer exposes a static DNS (URL)
+12) Open port 80 to LB SG - This is the most secure way of ensuring only the ALB can access the EC2 instances. Referencing by security groups in rules is an extremely powerful rule and many questions at the exam rely on it. Make sure you fully master the concepts behind it!
+13) Use SNI - SNI (Server Name Indication) is a feature allowing you to expose multiple SSL certs if the client supports it. Read more here: https://aws.amazon.com/blogs/aws/new-application-load-balancer-sni/
+14) AZ-B will terminate the instance with oldest launch configuration - Make sure you remember the Default Termination Policy for ASG. It tries to balance across AZ first, and then delete based on the age of the launch configuration.
+15) internet gateway 
+16) cross zone load balancing
+17) Target scaling policy
