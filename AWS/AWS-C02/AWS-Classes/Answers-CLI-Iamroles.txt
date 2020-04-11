@@ -1,0 +1,4 @@
+1) Should add IAM role to the instance - IAM roles are the right way to provide credentials and permissions to an EC2 instance
+2) I should run 'aws configure' and put access key and secret key to put somehing in the s3 - Even better would be to create a user specifically for that one on-premise server
+3) compare your both iam policy's and understand the differences 
+4) Query meta data at http://169.254.169.254/latest/meta-data/s

@@ -1,0 +1,15 @@
+1) My EC2 Instance does not have the permissions to perform an API call PutObject on S3. What should I do?
+   (I should run 'aws configure' and put access key and secret key to put somehing in the s3)
+   (Should add IAM role to the instance)
+   (I should use instance metadata api call)
+2) I have an on-premise personal server that I'd like to use to perform AWS API calls
+   (I should run 'aws configure' and put access key and secret key to put somehing in the s3)
+   (Should add IAM role to the instance)
+3) I need my colleagues help to debug my code. When he runs the application on his machine, it's working fine, whereas I get API authorisation exceptions. What should I do?
+   (Send your access and secret key so that he can replicate the issue you are facing)
+   (compare your both iam policy's and understand the differences)
+   (Ask his credentials to access the application which saves lot of time in troubleshooting)
+4) To get the instance id of my EC2 machine from the EC2 machine, the best thing is to...
+   (Create an IAM role and attach it to the instance and perform desired acions)
+   (Query user data at http://169.254.169.254/latest/user-data/)
+   (Query meta data at http://169.254.169.254/latest/meta-data/)
