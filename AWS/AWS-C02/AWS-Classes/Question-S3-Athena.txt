@@ -1,0 +1,76 @@
+1) You're trying to upload a 25 GB file on S3 and it's not working
+   (The file size limit on s3 is 5GB)
+   (The s3 service must be down)
+   (You should use multipart upload if the file size is greater than 5G)
+2) I tried creating an S3 bucket named "Dev" but it didn't work. This is a new AWS Account and I have no buckets at all. What is the cause?. Mension two reasons.
+   (Missing IAM permissions, You are in other region and you dont have the permission to upload to that region)
+   (file name must be gloabally unique, It can not be Upper case)
+3)  You've added files in your bucket and then enabled versioning. The files you've already added will have which version?
+   (1, 0, -1, null)
+4) Your client wants to make sure the encryption is happening in S3, but wants to fully manage the encryption keys and never store them in AWS. You recommend
+   (SSE-S3)
+   (SSE-KMS)
+   (SSE-C)
+   (Client side encription)
+5) Your company wants data to be encrypted in S3, and maintain control of the rotation policy for the encryption keys, but not know the encryption keys values. You recommend
+   (SSE-S3)
+   (SSE-KMS)
+   (SSE-C)
+   (Client side encription)
+6) Your company does not trust S3 for encryption and wants it to happen on the application. You recommend
+   (SSE-S3)
+   (SSE-KMS)
+   (SSE-C or Client side encription)
+7) The bucket policy allows our users to read / write files in the bucket, yet we were not able to perform a PutObject API call.
+   (The plicy must be wrong)
+   (The IAM user must have EXPLICIT DENY in the attached IAM Policy)
+   (You should contanct AWS Support to lift this limit)
+8) You have a website that loads files from another S3 bucket. When you try the URL of the files directly in your Chrome browser it works, but when the website you're visiting tries to load these files it doesn't. What's the problem?
+   (The Bucket policy is wrong)
+   (The IAM policy is wrong)
+   (CORS is wrong)
+   (Encription is wrong)
+9) You have enabled versioning and want to be extra-careful when it comes to deleting files on S3. What should you enable to prevent accidental permanent deletions ?
+   (Use bucket policy)
+   (Enable MFA Delete)
+   (Encrypt the files)
+   (Disable versioning)
+10) You would like all your files in S3 to be encrypted by default. What is the optimal way of achieving this?
+   (Use Bucket policy that forces HTTPS connections)
+   (Enable "Default encryption" on S3)
+   (Enable versioning)
+11) You suspect some of your employees to try to access files in S3 that they don't have access to. How can you verify this is indeed the case without them noticing?
+   (Restric IAM Policies and look at cloud trail logs)
+   (Enable cloud trail logs and analyze them using Athena)
+   (Use a bucket policy)
+12) You are looking for your entire S3 bucket to be available fully in a different region so you can perform data analysis optimally at the lowest possible cost. Which feature should you use?
+   (Cloud front distribution)
+   (S3 Cross region replication)
+   (S3 versioning)
+13) You are looking to provide temporary URLs to a growing list of federated users in order to allow them to perform a file upload on S3 to a specific location. What should you use?
+   (S3 CORS)
+   (S3 CRR)
+   (S3 Bucket policy)
+   (S3 Pre-Signed URL)
+   (IAM Users)
+14) How can you automate the transition of S3 objects between their different tiers?
+   (Use CRR)
+   (Use S3 Lifecycle policy)
+   (Use S3 Lambda)
+15) Which of the following is NOT a Glacier retrieval mode?
+   (Instant 10 sec)
+   (Expidited 1 to 5 min)
+   (Standard 3 to 5 hours)
+   (Bulk 5 to 12 hours)
+16) Which of the following is a Serverless data analysis service allowing you to query data in S3?
+   (S3 analytics, RDS, Athena)
+
+sdfsdf
+
+
+
+
+
+
+
+

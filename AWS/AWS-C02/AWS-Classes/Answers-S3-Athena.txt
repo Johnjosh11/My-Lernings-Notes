@@ -1,0 +1,17 @@
+1) The s3 service must be down - Multi Part Upload is also recommended as soon as the file is over 100MB (vedio - https://www.youtube.com/watch?v=14goBiDF4z0)
+2) file name must be gloabally unique, It can not be Upper case 
+3) null 
+4) SSE-C - Here you have full control over the encryption keys, and let AWS do the encryption
+5) SSE-KMS - With SSE-KMS you let AWS manage the encryption keys but you have full control of the key rotation policy
+6) Client side encription - With Client Side Encryption you perform the encryption yourself and send the encrypted data to AWS directly. AWS does not know your encryption keys and cannot decrypt your data.
+7) The IAM user must have EXPLICIT DENY in the attached IAM Policy - Explicit DENY in an IAM policy will take precedence over a bucket policy permission
+8) CORS is wrong - Cross-origin resource sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain. To learn more about CORS, go here: https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html
+9) Enable MFA Delete - MFA Delete forces users to use MFA tokens before deleting objects. It's an extra level of security to prevent accidental deletes
+10) Enable "Default encryption" on S3 
+11) Enable cloud trail logs and analyze them using Athena - S3 Access Logs log all the requests made to buckets, and Athena can then be used to run serverless analytics on top of the logs files
+12) S3 Cross region replication - S3 CRR is used to replicate data from an S3 bucket to another one in a different region
+13) S3 Pre-Signed URL - Pre-Signed URL are temporary and grant time-limited access to some actions in your S3 bucket.
+14) Use S3 Lifecycle policy 
+15) Instant 10 sec 
+16) Athena
+
