@@ -1,0 +1,72 @@
+1) My company would like to have a MySQL database internally that is going to be available even in case of a disaster in the AWS Cloud. I should setup
+   (Read Replica)
+   (Multi-AZ)
+   (Encryption)
+2) Our RDS database struggles to keep up with the demand of the users from our website. Our million users mostly read news, and we don't post news query often. Which solution is NOT adapted to this problem?
+   (Elasticache Cluster)
+   (RDS RR)
+   (RDS Multi AZ)
+3) We have setup read replicas on our RDS database, but our users are complaining that upon updating their social media posts, they do not see the update right away
+   (Bug in the application)
+   (RR will have asynchronous)
+4) Which RDS Classic (not Aurora) feature does not require us to change our SQL connection string?
+   (RR, Multi AZ)
+5) You want to ensure your Redis cluster will always be available
+   (Enable RR)
+   (Multi AZ)
+6) Your application functions on an ASG behind an ALB. Users have to constantly log back in and you'd rather not enable stickiness on your ALB as you fear it will overload some servers. What should you do?
+   (Storing Session Data in ElastiCache)
+   (Storing Session Data in RDS)
+   (Storing Session Data in EBS Volume)
+7) One analytics application is currently performing its queries against your main production database. These queries slow down the database which impacts the main user experience. What should you do to improve the situation?
+   (Setup Multi AZ)
+   (Setup RR)
+   (Run the analytic queries in the night)
+   (Increase RDS instance size)
+8) You have a requirement to use TDE (Transparent Data Encryption) on top of KMS. Which database technology does NOT support TDE on RDS?
+   (Postgress, Oracel, Ms SQL Server, mysql)
+9) Which RDS database technology does NOT support IAM authentication?
+   (Postgress, Oracel, MySQL)
+10) You would like to ensure you have a database available in another region if a disaster happens to your main region. Which database do you recommend?
+   (RDS RR, RDS Multi AZ, Aurora RR, Auror Global Database)
+11) How can you enhance the security of your Redis cache to force users to enter a password?
+   (Use Redis Auth, Use IAM Auth, Use Security groups)
+12) Your company has a production Node.js application that is using RDS MySQL 5.6 as its data backend. A new application programmed in Java will perform some heavy analytics workload to create a dashboard, on a regular hourly basis. You want the final solution to minimize costs and have minimal disruption on the production application, what should you do?
+   (Enable Multi AZ for the RDS Database and run the analytics workload on the standby database)
+   (Create a RR in dirrent AZ and run the analytics workload on the replica database)
+   (Create a RR in dirrent AZ and run the analytics workload on the Source database)
+   (Create a RR in same AZ and run the analytics workload on the replica database)
+13) You would like to create a disaster recovery strategy for your RDS PostgreSQL database so that in case of a regional outage, a database can be quickly made available for Read and Write workload in another region. The DR database must be highly available. What do you recommend?
+   (Create RR in the same region and enable multi AZ on the main DB)
+   (Create RR in the different region and enable multi AZ on the main DB)
+   (Enable multi AZ on the main DB)
+14) You are managing a PostgreSQL database and for security reasons, you would like to ensure users are authenticated using short-lived credentials. What do you suggest doing?
+   (Install PostgreSQL on EC2 and install the pg_iam module. Authonticate using IAM user creds)
+   (Install PostgreSQL on RDS and install the pg_iam module. Authonticate using IAM user creds)
+   (Use PostgreSQL for RDS and authenticate using a token obtained through the RDS Instance)
+   (Use SSl connection for high security authentication)
+15) An application is running in production, using an Aurora database as its backend. Your development team would like to run a version of the application in a scaled-down application, but still, be able to perform some heavy workload on a need-basis. Most of the time, the application will be unused. Your CIO has tasked you with helping the team while minimizing costs. What do you suggest?
+   (Use Aurora Global Database)
+   (Use RDS Database instead)
+   (Use Aurora Serverless)
+   (Run Aurora on EC2, and write a script to shut down the EC2 intance at night)
+16) Which database helps you store data in a relational format, with SQL language compatibility and capability of processing transactions? 
+   (RDS, Elasticache, Dynamodb)
+17) Which database do you suggest to have caching capability with a Redis compatible API?
+   (RDS, Elasticache, Dynamodb, ElasticSearch)
+18) You are looking to perform OLTP, and would like to have the underlying storage with the maximum amount of replication and auto-scaling capability. What do you recommend?
+   (RDS, Elasticache, Dynamodb, Aurora)
+19) As a solution architect, you plan on creating a social media website where users can be friends with each other, and like each other's posts. You plan on performing some complicated queries such as "What are the number of likes on the posts that have been posted by the friends of Mike?". What database do you suggest?
+   (RDS, Elasticache, Redshift, Neptune)
+21) You would like to store big objects of 100 MB into a reliable and durable Key Value store. What do you recommend? 
+   (Ahtena, S3, Dynamodb, Elastic Search)
+22) You would like to have a database which is efficient at performing analytical queries on large sets of columnar data. You would like to connect that Data Warehouse to a reporting and dashboard tool such as Amazon Quicksight. Which technology do you recommend?
+   (RDS, s3, Redshift, Neptune)
+23) Your log data is currently stored in S3 and you would like to perform a quick analysis if possible serverless to filter the logs and find a user which may have completed an unauthorized action. Which technology do you recommend?
+   (Ahtena, S3, Dynamodb, Elastic Search)
+24) Your gaming website is currently running on top of DynamoDB. Users have been asking for a search feature to find other gamers by name, with partial matches if possible. Which technology do you recommend to implement that feature?
+   (Ahtena, S3, Dynamodb, Elastic Search)
+
+   
+
+

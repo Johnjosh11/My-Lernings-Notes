@@ -65,7 +65,7 @@
 16) Which of the following is a Serverless data analysis service allowing you to query data in S3?
    (S3 analytics, RDS, Athena)
 
-sdfsdf
+
 
 
 
