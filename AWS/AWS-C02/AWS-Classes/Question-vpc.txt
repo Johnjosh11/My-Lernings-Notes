@@ -1,5 +1,5 @@
-1) You have a corporate network of size 10.0.0.0/8  and a satellite office of size 192.168.0.0/16. Which CIDR is acceptable for your AWS VPC if you plan on connecting your networks later on?
-   (172.16.0.0/12, 172.16.0.0/16, 10.0.16.0/16, 192.168.4.0/18 )
+1) You have a corporate network of size 10.0.0.0/16. Which CIDR is acceptable for your AWS VPC if you plan on connecting your networks later on?
+   (172.16.0.0/12, 172.16.0.0/16, 10.16.8.0/16, 192.168.4.0/18)
 2) You plan on creating a subnet and want it to have at least capacity for 28 EC2 instances. What's the minimum size you need to have for your subnet?
    (/25, /26, /27, /28)
 3) You have setup an internet gateway in your VPC, but your EC2 instances still don't have access to the internet. What is NOT a possible issue?
@@ -7,7 +7,7 @@
    (The security group)
 4) You would like to provide internet access to your instances in private subnets with IPv4
    (NAT Gateway, Egress only)
-5) VPC Peering has been enabled between VPC A and VPC B, and the route tables have been updated for VPC A. Still, you instances cannot communicate. What is the likely issue?
+5) VPC Peering has been enabled between VPC A and VPC B, and the route tables have been updated for VPC A. Still, your instances cannot communicate. What is the likely issue?
    (Check NACL, Check route table in B, Check the instance sg)
 6) You have set-up a direct connect between your Corporate Data Center and your VPC A. You need to access VPC B in another region from your Corporate Data Center as well. What should you do?
    (Enable VPC Peering)
@@ -26,6 +26,5 @@
    (Direct connect)
    (VPN Cloud Hub)
    (Private Link)
-   
 
    
