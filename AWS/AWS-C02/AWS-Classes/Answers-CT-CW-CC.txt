@@ -1,0 +1,8 @@
+1) Enable Detailed Monitoring - This is a paid offering and gives you EC2 metrics at a 1 minute rate
+2) 1 Second
+3) The alarm will remain in Alarm state but will not decrease the instances - The number of instances in an ASG cannot go below the minimum, even if the alarm would in theory trigger an instance termination
+4) 10 seconds 
+5) Cloud watch - CloudWatch is used to monitor the applications performance / metrics
+6) Look at Cloud Trail - CloudTrail helps audit the API calls made within your account, so the database deletion API call will appear here (regardless if made from the console, the CLI, or an SDK)
+7) Setup Cloud Config
+8) Setup Cloud Config

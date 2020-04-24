@@ -1,0 +1,29 @@
+1) We'd like to have CloudWatch Metrics for EC2 at a 1 minute rate. What should we do?
+   (Enable Custom metrix)
+   (Enable Detailed Monitoring)
+   (Basic Monitoring is enough)
+   (Enable High resolution)
+2) High Resolution Custom Metrics can have a minimum resolution of
+   (Seconds 1, 10, 30, 60)
+3) Your CloudWatch alarm is triggered and controls an ASG. The alarm should trigger 1 instance being deleted from your ASG, but your ASG has already 2 instances running and the minimum capacity is 2. What will happen?
+   (One isntance will be deleted and minimum capasity will decrease to 1)
+   (The alarm will remain in Alarm state but will not decrease the instances)
+   (The alarm will be detanced from ASG)
+   (The alarm will be in OK State)
+4) An Alarm on a High Resolution Metric can be triggered as often as
+   (1, 10, 30, 60 seeconds)
+5) You have made a configuration change and would like to evaluate the impact of it on the performance of your application. Which service do you use?
+   (Cloud watch, cloud trail)
+6) Someone has terminated an EC2 instance in your account last week, which was hosting a critical database. You would like to understand who did it and when, how can you achieve that?
+   (Look at Cloud watch Alarms)
+   (Look at Cloud watch Metrics)
+   (Look at Cloud watch Events)
+   (Look at Cloud Trail)
+7) You would like to ensure that over time, none of your EC2 instances expose the port 84 as it is known to have vulnerabilities with the OS you are using. What can you do to monitor this?
+   (Setup Cloud Watch)
+   (Setup Cloud Trail)
+   (Setup Cloud Config)
+8) You would like to evaluate the compliance of your resource's configurations over time. Which technology do you choose?
+   (Setup Cloud Watch)
+   (Setup Cloud Trail)
+   (Setup Cloud Config)
