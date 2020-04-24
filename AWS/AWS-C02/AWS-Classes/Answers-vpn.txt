@@ -1,0 +1,9 @@
+1) 172.16.0.0/16 - CIDR not should overlap, and the max CIDR size in AWS is /16
+2) /26 - perfect size (64 IP) - as aws reserves ips so /27 is not sutable
+3) The security group
+4) NAT Gateway
+5) Check route table in B
+6) Use a direct connect gateway
+7) s3 & Dynamodb - these two services have a Gateway endpoint (remember it), all the other ones have an interface endpoint (powered by Private Link - means a private IP)
+8) Create private link
+9) VPN Cloud Hub
